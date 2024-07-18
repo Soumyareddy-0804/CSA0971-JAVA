@@ -1,0 +1,24 @@
+public class LengthOfLastWord {
+    public static int lengthOfLastWord(String s) {
+        // Trim the input string to remove leading and trailing whitespace
+        String trimmed = s.trim();
+        
+        // Find the last space in the trimmed string
+        int lastSpaceIndex = trimmed.lastIndexOf(' ');
+        
+        // Calculate the length of the last word
+        int lengthOfLastWord = trimmed.length() - (lastSpaceIndex + 1);
+        
+        return lengthOfLastWord;
+    }
+    
+    public static void main(String[] args) {
+        String s1 = "Hello World";
+        String s2 = "   Hello    ";
+        String s3 = "a "; // Edge case with a single word and trailing space
+        
+        System.out.println("Length of last word in \"" + s1 + "\": " + lengthOfLastWord(s1)); // Output: 5
+        System.out.println("Length of last word in \"" + s2 + "\": " + lengthOfLastWord(s2)); // Output: 5
+        System.out.println("Length of last word in \"" + s3 + "\": " + lengthOfLastWord(s3)); // Output: 1
+    }
+}
