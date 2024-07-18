@@ -1,0 +1,37 @@
+public class RansomNote {
+    public static boolean canConstruct(String ransomNote, String magazine) {
+       
+        if (ransomNote.length() == 0) {
+            return true;
+        }
+        
+        int[] charCount = new int[26];
+        
+     
+        for (char ch : magazine.toCharArray()) {
+            charCount[ch - 'a']++;
+        }
+        
+    
+        for (char ch : ransomNote.toCharArray()) {
+            int index = ch - 'a';
+            if (charCount[index] > 0) {
+                charCount[index]--;
+            } else {
+                return false; // If character is not available in magazine
+            }
+        }
+        
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        String ransomNote1 = "a";
+        String magazine1 = "b";
+        System.out.println("Can construct ransomNote1 from magazine1? " + canConstruct(ransomNote1, magazine1)); // Output: false
+        
+        String ransomNote2 = "aa";
+        String magazine2 = "aab";
+        System.out.println("Can construct ransomNote2 from magazine2? " + canConstruct(ransomNote2, magazine2)); // Output: true
+    }
+}
