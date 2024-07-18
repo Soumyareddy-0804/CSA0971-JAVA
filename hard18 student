@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+
+class Student {
+    protected String name;
+    protected double[] marks;
+
+    public Student(String name) {
+        this.name = name;
+        this.marks = new double[6];
+    }
+
+    public void inputMarks() {
+        Scanner scanner = new Scanner(System.in);
+        String[] subjects = {"Python", "C Programming", "Mathematics", 
+                             "Physics", "Chemistry", "Professional Ethics"};
+        for (int i = 0; i < subjects.length; i++) {
+            System.out.print("Enter the marks in " + subjects[i] + ": ");
+            marks[i] = scanner.nextDouble();
+        }
+    }
+
+    public double calculateTotal() {
+        double total = 0;
+        for (double mark : marks) {
+            total += mark;
+        }
+        return total;
+    }
+}
+
+
+class Result extends Student {
+    private double aggregate;
+    private String grade;
+
+    public Result(String name) {
+        super(name);
+        this.aggregate = 0.0;
+        this.grade = "";
+    }
+
+    public double calculateAggregate() {
+        double total = calculateTotal();
+        this.aggregate = (total / 600) * 100;
+        return this.aggregate;
+    }
+
+    public void calculateGrade() {
+        if (this.aggregate > 75) {
+            this.grade = "DISTINCTION";
+        } else if (this.aggregate >= 60) {
+            this.grade = "FIRST DIVISION";
+        } else if (this.aggregate >= 50) {
+            this.grade = "SECOND DIVISION";
+        } else if (this.aggregate >= 40) {
+            this.grade = "THIRD DIVISION";
+        } else {
+            this.grade = "FAIL";
+        }
+    }
+
+    public void displayResults() {
+        double total = calculateTotal();
+        calculateAggregate();
+        calculateGrade();
+        System.out.println("Total = " + total);
+        System.out.printf("Aggregate = %.2f\n", this.aggregate);
+        System.out.println("Class: " + this.grade);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter student's name: ");
+        String name = scanner.nextLine();
+
+        Result student = new Result(name);
+        student.inputMarks();
+        student.displayResults();
+    }
+}
