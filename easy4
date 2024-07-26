@@ -1,0 +1,19 @@
+class E4{
+public static void main(String arg[]){
+int size=4;
+int i,j;
+String[] str={"Apple", "Mango", "Banana", "Pineapple"};
+for(i=0;i<size;i++){
+for(j=i+1;j<size;j++){
+if(str[i].compareTo(str[j])>0){
+String temp=str[i];
+str[i]=str[j];
+str[j]=temp;
+}
+}
+}
+for(i=0;i<size;i++){
+System.out.println(str[i]);
+}
+}
+}
