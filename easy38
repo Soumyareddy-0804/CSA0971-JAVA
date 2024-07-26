@@ -1,0 +1,20 @@
+public class LeapYear {
+    public static void main(String[] args) {
+        String date = "04/11/1947"; // Sample input
+        
+        if (isValidDate(date)) {
+            int year = Integer.parseInt(date.substring(date.lastIndexOf('/') + 1));
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                System.out.println("Given year is a Leap Year");
+            } else {
+                System.out.println("Given year is not a Leap Year");
+            }
+        } else {
+            System.out.println("Invalid date format.");
+        }
+    }
+    
+    public static boolean isValidDate(String date) {
+        return date.matches("\\d{2}/\\d{2}/\\d{4}");
+    }
+}
