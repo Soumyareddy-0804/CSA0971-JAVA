@@ -1,0 +1,17 @@
+public class NumberOfFactors {
+    public static void main(String[] args) {
+        int number = 100; // Sample input
+        
+        if (number < 1) {
+            System.out.println("Number should be a positive integer.");
+        } else {
+            int countFactors = 0;
+            for (int i = 1; i <= number; i++) {
+                if (number % i == 0) {
+                    countFactors++;
+                }
+            }
+            System.out.println("Number of factors of " + number + " = " + countFactors);
+        }
+    }
+}
