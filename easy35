@@ -1,0 +1,12 @@
+public class PrintNumbersSkipping {
+    public static void main(String[] args) {
+        int M = 50; // Sample inputs
+        int N = 100;
+        int K = 7;
+        
+        for (int i = M; i <= N; i += K) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
