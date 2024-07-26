@@ -1,0 +1,13 @@
+class E1reve{
+	public static void main(String arg[]){
+		String data="kavya";
+		String temp;
+		temp=" ";
+		int len=data.length()-1;
+		while(len>=0){
+			temp=temp+data.charAt(len);
+			len--;
+		}
+		System.out.println("Reverse string:" +temp);
+	}
+}
