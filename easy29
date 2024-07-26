@@ -1,0 +1,14 @@
+public class DecimalToBinaryReverse {
+    public static void main(String[] args) {
+        int decimal = 11; // Sample input
+        String binary = Integer.toBinaryString(decimal);
+        
+        StringBuilder reversedBinary = new StringBuilder(binary).reverse();
+        int reversedDecimal = Integer.parseInt(reversedBinary.toString(), 2);
+        
+        System.out.println("Decimal: " + decimal);
+        System.out.println("Binary: " + binary);
+        System.out.println("Reversed Binary: " + reversedBinary);
+        System.out.println("Reversed Decimal: " + reversedDecimal);
+    }
+}
