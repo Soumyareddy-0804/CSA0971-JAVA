@@ -1,0 +1,12 @@
+public class CheckVoteEligibility {
+    public static void main(String[] args) {
+        int age = 7; // Sample input
+        
+        if (age >= 18) {
+            System.out.println("You are eligible to vote.");
+        } else {
+            int yearsLeft = 18 - age;
+            System.out.println("You are not eligible to vote. You can vote after " + yearsLeft + " years.");
+        }
+    }
+}
