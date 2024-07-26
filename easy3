@@ -1,0 +1,12 @@
+class E3{
+public static void main(String arg[]){
+String str1="kavya";
+String str2="kavyaa";
+if(str1.equals(str2)){
+System.out.println("valid username");
+}
+else{
+System.out.println("invalid username");
+}
+}
+}
