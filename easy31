@@ -1,0 +1,21 @@
+public class LcmAndGcd {
+    public static void main(String[] args) {
+        int num1 = 16; // Sample inputs
+        int num2 = 20;
+        
+        int gcd = calculateGCD(num1, num2);
+        int lcm = (num1 * num2) / gcd;
+        
+        System.out.println("LCM: " + lcm);
+        System.out.println("GCD: " + gcd);
+    }
+    
+    public static int calculateGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
