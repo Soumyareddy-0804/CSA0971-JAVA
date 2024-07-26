@@ -1,0 +1,13 @@
+public class SimpleInterest {
+    public static void main(String[] args) {
+        double principal = 200000; // Sample inputs
+        int years = 3;
+        boolean isSeniorCitizen = false; // Change to true for senior citizen
+        
+        double rateOfInterest = isSeniorCitizen ? 12.0 : 10.0;
+        
+        double interest = (principal * rateOfInterest * years) / 100;
+        
+        System.out.println("Interest: " + interest);
+    }
+}
