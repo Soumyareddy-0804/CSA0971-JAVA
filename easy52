@@ -1,0 +1,10 @@
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        int M = 4; // Sample input
+        int N = 5; // Sample input
+        
+        for (int i = 1; i <= N; i++) {
+            System.out.println(i + "x" + M + "=" + (i * M));
+        }
+    }
+}
