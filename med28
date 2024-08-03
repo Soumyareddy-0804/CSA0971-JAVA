@@ -1,0 +1,24 @@
+import java.util.Arrays;
+class Sorter<T extends Comparable<T>> {
+    public void sort(T[] array) {
+        Arrays.sort(array);
+    }
+    public void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+}
+public class GenericsSorterDemo {
+    public static void main(String[] args) {
+        Sorter<Integer> integerSorter = new Sorter<>();
+        Integer[] intArray = {5, 3, 8, 1, 9};
+        integerSorter.sort(intArray);
+        integerSorter.printArray(intArray);
+        Sorter<String> stringSorter = new Sorter<>();
+        String[] strArray = {"apple", "orange", "banana", "grape"};
+        stringSorter.sort(strArray);
+        stringSorter.printArray(strArray);
+    }
+}
