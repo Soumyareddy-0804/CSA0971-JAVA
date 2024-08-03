@@ -1,0 +1,16 @@
+class nthfactor{
+	public static void main(String arg[]){
+		int num=100;
+		int n=4;
+		int a[]=new int[100];
+		int x=0;
+		for(int i=1;i<=num;i++){
+			if(num%i==0){
+				a[x]=i;
+				x++;
+			}
+		}
+	System.out.println("number of factors:" +x);
+	System.out.println(n+ " factor of " +num+ " = " +a[n-1]);
+}
+}
