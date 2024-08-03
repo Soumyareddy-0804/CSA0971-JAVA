@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class StringOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String input = scanner.nextLine();
+        String replacedString = input.replace("Saveetha", "YourUniversity");
+        System.out.println("Replaced String: " + replacedString);
+        int length = input.length();
+        System.out.println("Length of the string: " + length);
+        String upperCaseString = input.toUpperCase();
+        System.out.println("Uppercase String: " + upperCaseString);
+ scanner.close();
+    }
+}
