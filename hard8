@@ -1,0 +1,69 @@
+import java.util.Scanner;
+class Bank_Account
+{
+ String name,type;
+ int acc_num;
+ double bal;
+ double depos ;
+double upbal;
+
+ Bank_Account(String n,int a,String t,double b,double d)
+ {
+ name=n;
+ acc_num=a;
+ type=t;
+ bal=b;
+depos=d;
+ }
+ void deposit(double d)
+{
+ if(d>0){
+ upbal=bal+d;
+
+System.out.println(+upbal);
+
+
+}
+ else{
+
+ System.out.println("Invalid amt");}
+ 
+}
+ void withdraw(double w)
+ {
+ if(w>0 && w<=bal){
+ bal=bal-w;
+System.out.println(+bal);}
+ else{
+ System.out.println("Invalid amt");}
+ }
+ void display()
+ {
+ System.out.println("Name: "+name);
+ System.out.println("balance: "+bal);
+deposit(depos);
+ }
+}
+public class ak2
+{
+ public static void main(String[] args)
+ {
+ Scanner input=new Scanner(System.in);
+ String n,t;
+ int a;
+ double b,d;
+ System.out.print("Enter the name: ");
+ n=input.next();
+ System.out.print("Enter Account number: ");
+ a=input.nextInt();
+ System.out.print("Enter the type of account: ");
+ t= input.next();
+ System.out.print("Enter the balance amt: ");
+ b=input.nextInt();
+System.out.print("Enter the deposit amt: ");
+d=input.nextInt();
+
+ Bank_Account bank=new Bank_Account(n,a,t,b,d);
+ bank.display(); 
+}
+}
